@@ -46,5 +46,5 @@ force-app/
 - [ ] Add dashboards for leave status
 
 ---
-**Author**: Your Name  
+**Author**: Olie
 **License**: MIT
