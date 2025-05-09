@@ -1,0 +1,18 @@
+
+# Salesforce DX
+.sfdx
+.localdevserver
+coverage/
+coverage-final.json
+nyc_output/
+test-results/
+*.log
+*.scratch-def.json
+
+# Node
+node_modules/
+npm-debug.log*
+
+# VSCode
+.vscode/
+.history/
