@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Leave Request</label>
+    <pluralLabel>Leave Requests</pluralLabel>
+    <nameField>
+        <type>AutoNumber</type>
+        <label>Leave Request Number</label>
+        <displayFormat>LR-{0000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+
+    <fields>
+        <fullName>Employee__c</fullName>
+        <label>Employee</label>
+        <type>Lookup</type>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>LeaveRequestEmployee</relationshipLabel>
+        <relationshipName>Employee</relationshipName>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>From_Date__c</fullName>
+        <label>From Date</label>
+        <type>Date</type>
+        <required>true</required>
+    </fields>
+
+    <fields>
+        <fullName>To_Date__c</fullName>
+        <label>To Date</label>
+        <type>Date</type>
+        <required>true</required>
+    </fields>
+
+    <fields>
+        <fullName>Leave_Type__c</fullName>
+        <label>Leave Type</label>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <value>
+                    <fullName>Annual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sick</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Casual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unpaid</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <fields>
+        <fullName>Reason__c</fullName>
+        <label>Reason</label>
+        <type>LongTextArea</type>
+        <length>1000</length>
+        <visibleLines>3</visibleLines>
+    </fields>
+
+    <fields>
+        <fullName>Manager_Comments__c</fullName>
+        <label>Manager Comments</label>
+        <type>LongTextArea</type>
+        <length>1000</length>
+        <visibleLines>3</visibleLines>
+    </fields>
+
+    <fields>
+        <fullName>Total_Days__c</fullName>
+        <label>Total Days</label>
+        <type>Number</type>
+        <precision>5</precision>
+        <scale>0</scale>
+        <formula>To_Date__c - From_Date__c + 1</formula>
+    </fields>
+</CustomObject>

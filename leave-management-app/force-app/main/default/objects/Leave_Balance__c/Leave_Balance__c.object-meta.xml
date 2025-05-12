@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Leave Balance</label>
+    <pluralLabel>Leave Balances</pluralLabel>
+    <nameField>
+        <type>AutoNumber</type>
+        <label>Leave Balance Number</label>
+        <displayFormat>LB-{0000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+
+    <fields>
+        <fullName>Employee__c</fullName>
+        <label>Employee</label>
+        <type>Lookup</type>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>LeaveBalanceEmployee</relationshipLabel>
+        <relationshipName>LeaveBalances</relationshipName>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Annual_Leave_Remaining__c</fullName>
+        <label>Annual Leave Remaining</label>
+        <type>Number</type>
+        <precision>5</precision>
+        <scale>0</scale>
+    </fields>
+
+    <fields>
+        <fullName>Sick_Leave_Remaining__c</fullName>
+        <label>Sick Leave Remaining</label>
+        <type>Number</type>
+        <precision>5</precision>
+        <scale>0</scale>
+    </fields>
+
+    <fields>
+        <fullName>Unpaid_Leave_Used__c</fullName>
+        <label>Unpaid Leave Used</label>
+        <type>Number</type>
+        <precision>5</precision>
+        <scale>0</scale>
+    </fields>
+
+</CustomObject>
